@@ -1,40 +1,41 @@
-import { Avatar } from '@mantine/core';
+import { Avatar, Indicator } from '@mantine/core';
 import {
-  IconAsset,
+  IconBrandVolkswagen,
   IconBellRinging,
-  IconSettings2,
+  IconSettings2
 } from '@tabler/icons-react';
+import Navlinks from './Navlinks';
 
 const Header = () => {
   return (
-    <div className="w-full bg-black px-6 text-white h-28 flex justify-between items-center">
-      
+    <div className="w-full bg-mine-shaft-900 px-6 text-white h-20 flex justify-between items-center">
+
       {/* Logo */}
-      <div className="flex gap-3 items-center">
-        <IconAsset className="h-10 w-10" stroke={1.25} />
-        <div className="text-2xl font-semibold">ijobs</div>
+      <div className="flex gap-3 items-center text-bright-sun-400">
+        <IconBrandVolkswagen className="h-10 w-10" stroke={1.25} />
+        <div className="text-2xl font-semibold">Job Portal</div>
       </div>
 
-      {/* Navigation */}
-      <div className="flex gap-3">
-        <a href="">Find Jobs</a>
-        <a href="">Find Talent</a>
-        <a href="">Upload Job</a>
-        <a href="">About Us</a>
-      </div>
+      <Navlinks />
 
       {/* User section */}
       <div className="flex gap-5 items-center">
-        <IconBellRinging />
-
         <div className="flex items-center gap-2">
-          <div>job</div>
-          <Avatar src="avatar.png" alt="it's me" />
+          <div>Golu</div>
+          <Avatar src={"avatar image.png"} alt="Golu" />
         </div>
 
-        <IconSettings2 />
+        <div className="bg-mine-shaft-900 p-1.5 rounded-full">
+          <IconSettings2 stroke={1.5} />
+        </div>
+
+        <div className="bg-mine-shaft-900 p-1.5 rounded-full">
+          <Indicator size={12} withBorder processing>
+            <IconBellRinging />
+          </Indicator>
+        </div>
       </div>
-      
+
     </div>
   );
 };
